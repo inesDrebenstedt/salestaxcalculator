@@ -10,6 +10,8 @@ import org.junit.jupiter.api.DisplayName;
 import main.java.bo.Item;
 import main.java.bo.ShoppingBasket;
 import main.java.service.ShoppingBasketService;
+import main.java.util.BasketTotalCalculator;
+import main.java.util.BasketTotalWithoutTaxesCalculator;
 import main.java.util.ImportTaxCalculator;
 import main.java.util.SalesTaxCalculator;
 
@@ -85,6 +87,30 @@ public class TestShoppingBasket {
 		  Double importTaxOfBasket1 = 
 				  ImportTaxCalculator.calculateImportTaxesOfBasket(basket1);
 		  assertEquals(0.0, importTaxOfBasket1, 0.0001);
+		  ShoppingBasketService.emptyBasket(basket1);
+	  }
+	  
+	  @Test
+	  @DisplayName("#7")
+	  public void testCalculateTotalBasket1WithoutTaxes() {
+		  prepareShoppingBasket1();
+		  
+		  Double totalOfBasket1WithoutTaxes = 
+				  BasketTotalWithoutTaxesCalculator.calculateBasketTotalWithoutTaxes(basket1);
+		  assertEquals(28.33, totalOfBasket1WithoutTaxes, 0.001);
+		  
+		  ShoppingBasketService.emptyBasket(basket1);
+	  }
+	  
+	  @Test
+	  @DisplayName("#8")
+	  public void testCalculateTotalBasket1WithTaxes() {
+		  prepareShoppingBasket1();
+		  
+		  Double totalOfBasket1WithTaxes = 
+				  BasketTotalCalculator.calculateTotalSumOfBasket(basket1);
+		  assertEquals(29.83, totalOfBasket1WithTaxes, 0.001);
+		  
 		  ShoppingBasketService.emptyBasket(basket1);
 	  }
 
