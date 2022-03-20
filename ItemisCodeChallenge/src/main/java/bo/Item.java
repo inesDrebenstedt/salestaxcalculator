@@ -4,14 +4,12 @@ public class Item {
 	
 	private String category;
 	private Double price;
-	private Double salesTaxPercentage;
 	private boolean isImported;
 	
-	public Item(String category, Double price, Double salesTaxPercentage, boolean isImported) {
+	public Item(String category, Double price, boolean isImported) {
 		super();
 		this.category = category;
 		this.price = price;
-		this.salesTaxPercentage = salesTaxPercentage;
 		this.isImported = isImported;
 	}
 
@@ -29,14 +27,6 @@ public class Item {
 
 	public void setPrice(Double price) {
 		this.price = price;
-	}
-
-	public Double getSalesTaxPercentage() {
-		return salesTaxPercentage;
-	}
-
-	public void setSalesTaxPercentage(Double salesTaxPercentage) {
-		this.salesTaxPercentage = salesTaxPercentage;
 	}
 
 	public boolean isImported() {
