@@ -19,8 +19,8 @@ public class TestShoppingBasket {
 	private static boolean isExemptFromSalesTax = true;
 	private static boolean isImported = true;
 	
-	@Before
-	private void prepareShoppingBasket1() {
+
+	public void prepareShoppingBasket1() {
 		  Item book = new Item("book", 12.49, isExemptFromSalesTax, !isImported);
 		  Item musicCD = new Item("music CD", 14.99, !isExemptFromSalesTax, !isImported);
 		  Item chocolateBar = new Item("chocolate bar", 0.85, isExemptFromSalesTax, !isImported);
@@ -42,12 +42,16 @@ public class TestShoppingBasket {
 		  Item book = new Item("book", 12.49, isExemptFromSalesTax, !isImported);
 		  ShoppingBasketService.addToBasket(basket1.getBasketContent(), book);
 		  assertTrue(basket1.getBasketContent().get(0).getCategory().contentEquals("book"));
+		  ShoppingBasketService.emptyBasket(basket1);
 	  }
 	  
 	  @Test
 	  @DisplayName("#3")
 	  public void testBasketWithOneItem() {
+		  Item book = new Item("book", 12.49, isExemptFromSalesTax, !isImported);
+		  ShoppingBasketService.addToBasket(basket1.getBasketContent(), book);
 		  assertTrue(basket1.getBasketContent().size() == 1);
+		  ShoppingBasketService.emptyBasket(basket1);
 	  }
 	  
 	  @Test
@@ -57,6 +61,8 @@ public class TestShoppingBasket {
 		  
 		  System.out.println(basket1.getBasketContent().size());
 		  assertTrue(basket1.getBasketContent().size() == 3);
+		  ShoppingBasketService.emptyBasket(basket1);
+		  
 	  }
 	  
 	  @Test
@@ -67,6 +73,7 @@ public class TestShoppingBasket {
 		  Double salesTaxOfBasket1 = 
 				  SalesTaxCalculator.calculateSalesTaxesOfBasket(basket1);
 		  assertEquals(1.50, salesTaxOfBasket1, 0.001);
+		  ShoppingBasketService.emptyBasket(basket1);
 	  }
 
 }
