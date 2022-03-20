@@ -10,6 +10,7 @@ import org.junit.jupiter.api.DisplayName;
 import main.java.bo.Item;
 import main.java.bo.ShoppingBasket;
 import main.java.service.ShoppingBasketService;
+import main.java.util.ImportTaxCalculator;
 import main.java.util.SalesTaxCalculator;
 
 public class TestShoppingBasket {
@@ -73,6 +74,17 @@ public class TestShoppingBasket {
 		  Double salesTaxOfBasket1 = 
 				  SalesTaxCalculator.calculateSalesTaxesOfBasket(basket1);
 		  assertEquals(1.50, salesTaxOfBasket1, 0.001);
+		  ShoppingBasketService.emptyBasket(basket1);
+	  }
+	  
+	  @Test
+	  @DisplayName("#6")
+	  public void testCalculateImportTaxesOfBasket1() {
+		  prepareShoppingBasket1();
+		  
+		  Double importTaxOfBasket1 = 
+				  ImportTaxCalculator.calculateImportTaxesOfBasket(basket1);
+		  assertEquals(0.0, importTaxOfBasket1, 0.0001);
 		  ShoppingBasketService.emptyBasket(basket1);
 	  }
 

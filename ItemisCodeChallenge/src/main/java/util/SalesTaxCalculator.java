@@ -1,8 +1,5 @@
 package main.java.util;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-
 import main.java.bo.Item;
 import main.java.bo.ShoppingBasket;
 
@@ -13,7 +10,7 @@ public class SalesTaxCalculator {
 		
 		for(Item item : basket.getBasketContent()) 
 		{
-			Double tempTax = round(calculateSalesTaxOfItem(item), 2);
+			Double tempTax = GeneralMathUtil.round(calculateSalesTaxOfItem(item), 2);
 			sumOfSalesTaxes += tempTax;
 		}
 		
@@ -31,18 +28,4 @@ public class SalesTaxCalculator {
 		return priceWithSalesTax;
 	}
 	
-	
-	/*
-	 * Stolen from stackoverflow
-	 */
-	public static double round(double value, int places) {
-	    if (places < 0) throw new IllegalArgumentException();
-
-	    BigDecimal bd = BigDecimal.valueOf(value);
-	    bd = bd.setScale(places, RoundingMode.HALF_UP);
-	    return bd.doubleValue();
-	}
-	
-	
-
 }
