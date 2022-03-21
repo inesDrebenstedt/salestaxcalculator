@@ -16,8 +16,8 @@ Input 1:
 > 1 music CD at 14.99
 > 1 chocolate bar at 0.85
 Input 2:
-> 1 imported box of chocolates at 10.00
-> 1 imported bottle of perfume at 47.50
+> 1 imported box of chocolates at 10.00 (+ 0.50 import)
+> 1 imported bottle of perfume at 47.50 (+ 4.75 sales + 2.38 import)
 Input 3:
 > 1 imported bottle of perfume at 27.99
 > 1 bottle of perfume at 18.99
@@ -32,14 +32,14 @@ Output 1:
 > Sales Taxes: 1.50
 > Total: 29.83
 Output 2:
-> 1 imported box of chocolates: 10.50
-> 1 imported bottle of perfume: 54.65
+> 1 imported box of chocolates: 10.50 (10.00 + 0.5 import)
+> 1 imported bottle of perfume: 54.65 (47.50 + 2.40 import + 4.75 sales)
 > Sales Taxes: 7.65
 > Total: 65.15
 Output 3:
-> 1 imported bottle of perfume: 32.19
-> 1 bottle of perfume: 20.89
+> 1 imported bottle of perfume: 32.19 (27.99 + 1.40 import + 2.80 sales)
+> 1 bottle of perfume: 20.89 (18.99 + 1.90 sales)
 > 1 packet of headache pills: 9.75
-> 1 imported box of chocolates: 11.85
+> 1 imported box of chocolates: 11.85 (11.25 + 0.60 import)
 > Sales Taxes: 6.70
 > Total: 74.68

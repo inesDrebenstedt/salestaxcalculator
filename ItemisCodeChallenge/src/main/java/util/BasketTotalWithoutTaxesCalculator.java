@@ -11,8 +11,7 @@ public class BasketTotalWithoutTaxesCalculator {
 		for(Item item : basket.getBasketContent()) {
 			totalWithoutTaxes += item.getPrice();
 		}
-		System.out.println("calculateBasketTotalWithoutTaxes: " + GeneralMathUtil.round(totalWithoutTaxes, 2));
-		return GeneralMathUtil.round(totalWithoutTaxes, 2);
+		return GeneralMathAndStringUtil.roundTo2ndDecimal(totalWithoutTaxes);
 	}
 
 }

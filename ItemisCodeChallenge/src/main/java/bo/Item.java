@@ -4,14 +4,14 @@ public class Item {
 	
 	private String category;
 	private Double price;
-	private boolean isExemptFromSalesTax;
+	private boolean isExemptFromBasicSalesTax;
 	private boolean isImported;
 	
 	public Item(String category, Double price, boolean isExempt, boolean isImported) {
 		super();
 		this.category = category;
 		this.price = price;
-		this.isExemptFromSalesTax = isExempt;
+		this.isExemptFromBasicSalesTax = isExempt;
 		this.isImported = isImported;
 	}
 
@@ -31,12 +31,12 @@ public class Item {
 		this.price = price;
 	}
 
-	public boolean isExemptFromSalesTax() {
-		return isExemptFromSalesTax;
+	public boolean isExemptFromBasicSalesTax() {
+		return isExemptFromBasicSalesTax;
 	}
 
-	public void setExemptFromSalesTax(boolean isExemptFromSalesTax) {
-		this.isExemptFromSalesTax = isExemptFromSalesTax;
+	public void setExemptFromBasicSalesTax(boolean isExemptFromSalesTax) {
+		this.isExemptFromBasicSalesTax = isExemptFromSalesTax;
 	}
 
 	public boolean isImported() {
