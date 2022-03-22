@@ -9,7 +9,7 @@ public class BasketTotalCalculator {
 		
 		result += BasketTotalWithoutTaxesCalculator.calculateBasketTotalWithoutTaxes(basket);
 		
-		result += AllSalesTaxesCalculator.calculateAllSalesTaxes(basket);
+		result += AllSalesTaxesCalculator.calculateAllSalesTaxesOfBasket(basket);
 		
 		return result;	
 	}

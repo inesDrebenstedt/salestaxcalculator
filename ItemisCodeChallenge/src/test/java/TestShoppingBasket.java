@@ -119,7 +119,7 @@ public class TestShoppingBasket {
 		Double basket2ImportTaxes = ImportTaxCalculator.calculateImportTaxesOfBasket(basket2);
 		assertEquals(2.90, basket2ImportTaxes, 0.001);
 
-		Double basket2AllSalesTaxes = AllSalesTaxesCalculator.calculateAllSalesTaxes(basket2);
+		Double basket2AllSalesTaxes = AllSalesTaxesCalculator.calculateAllSalesTaxesOfBasket(basket2);
 		assertEquals(7.65, basket2AllSalesTaxes, 0.001);
 
 		Double basket2Total = BasketTotalCalculator.calculateTotalSumOfBasket(basket2);
@@ -141,7 +141,7 @@ public class TestShoppingBasket {
 		Double basket3ImportTaxes = ImportTaxCalculator.calculateImportTaxesOfBasket(basket3);
 		assertEquals(2.00, basket3ImportTaxes, 0.001);
 
-		Double basket3AllSalesTaxes = AllSalesTaxesCalculator.calculateAllSalesTaxes(basket3);
+		Double basket3AllSalesTaxes = AllSalesTaxesCalculator.calculateAllSalesTaxesOfBasket(basket3);
 		assertEquals(6.70, basket3AllSalesTaxes, 0.001);
 
 		Double basket3Total = BasketTotalCalculator.calculateTotalSumOfBasket(basket3);

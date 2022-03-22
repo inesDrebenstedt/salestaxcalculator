@@ -1,5 +1,9 @@
 package main.java.util.math;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
+
 import main.java.util.string.StringTools;
 
 public class MathTools {
@@ -60,6 +64,13 @@ public class MathTools {
 		}
 
 		return result;
+	}
+	
+	public static String setFormat(Double d) {
+		  NumberFormat nf = NumberFormat.getNumberInstance(Locale.US);
+		  DecimalFormat df = (DecimalFormat) nf;
+		 df.setMinimumFractionDigits(2);
+		 return df.format(d);
 	}
 
 }
