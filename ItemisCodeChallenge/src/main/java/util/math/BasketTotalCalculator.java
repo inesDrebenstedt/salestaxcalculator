@@ -1,4 +1,4 @@
-package main.java.util;
+package main.java.util.math;
 
 import main.java.bo.ShoppingBasket;
 
