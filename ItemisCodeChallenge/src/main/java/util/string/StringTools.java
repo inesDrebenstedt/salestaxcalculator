@@ -5,7 +5,7 @@ public class StringTools {
 	
 
 	/*
-	 * Returns 2nd decimal after "." als String value. 12.34 returns "4"
+	 * Returns 2nd decimal after "." as String value. 12.34 returns "4"
 	 * 
 	 * @param Double value with two decimals after "."
 	 */

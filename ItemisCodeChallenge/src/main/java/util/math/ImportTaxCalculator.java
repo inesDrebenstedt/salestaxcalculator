@@ -22,7 +22,8 @@ public class ImportTaxCalculator {
 
 		if (item.isImported()) {
 			priceWithImportTax = (item.getPrice() / 100) * 5;
+			priceWithImportTax = MathTools.roundTo2ndDecimal(priceWithImportTax);
 		}
-		return MathTools.roundTo2ndDecimal(priceWithImportTax);
+		return MathTools.roundToNearestTwentieth(priceWithImportTax);
 	}
 }

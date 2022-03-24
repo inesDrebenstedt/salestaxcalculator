@@ -9,7 +9,6 @@ public class AllSalesTaxesCalculator {
 		Double allSalesTaxesOfBasket = 0.0;
 		
 		allSalesTaxesOfBasket += MathTools.roundToNearestTwentieth(BasicSalesTaxCalculator.calculateSalesTaxesOfBasket(basket));
-
 		allSalesTaxesOfBasket += MathTools.roundToNearestTwentieth(ImportTaxCalculator.calculateImportTaxesOfBasket(basket));
 		
 		return MathTools.roundToNearestTwentieth(allSalesTaxesOfBasket);
@@ -19,7 +18,6 @@ public class AllSalesTaxesCalculator {
 		Double allSalesTaxesOfItem = 0.0;
 		
 		allSalesTaxesOfItem += MathTools.roundToNearestTwentieth(BasicSalesTaxCalculator.calculateBasicSalesTaxOfItem(item));
-
 		allSalesTaxesOfItem += MathTools.roundToNearestTwentieth(ImportTaxCalculator.calculateImportTaxOfItem(item));
 		
 		return MathTools.roundToNearestTwentieth(allSalesTaxesOfItem);

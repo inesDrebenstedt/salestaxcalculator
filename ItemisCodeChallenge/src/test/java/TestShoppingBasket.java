@@ -149,6 +149,18 @@ public class TestShoppingBasket {
 
 	}
 	
+	@Test
+	@Order(10)
+	@DisplayName("#11")
+	public void testImportTaxOfOneItem() {
+		
+		Item importedChocolateBox = new Item("imported chocolate box", 11.25, isExemptFromSalesTax, isImported);
+		Double itemImportTax = ImportTaxCalculator.calculateImportTaxOfItem(importedChocolateBox);
+		
+		assertEquals(0.60, itemImportTax, 0.001);
+	}
+	
+	/*
 	@After
 	public void tearDown() {
 		basket0 = null;
@@ -156,5 +168,6 @@ public class TestShoppingBasket {
 		basket2 = null;
 		basket3 = null;
 	}
+	*/
 
 }

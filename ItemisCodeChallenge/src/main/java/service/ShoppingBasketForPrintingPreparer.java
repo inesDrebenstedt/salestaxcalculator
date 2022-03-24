@@ -14,8 +14,6 @@ public class ShoppingBasketForPrintingPreparer {
 	private static ShoppingBasket basket1 = ShoppingBasketService.prepareShoppingBasket1();
 	private static ShoppingBasket basket2 = ShoppingBasketService.prepareShoppingBasket2();
 	private static ShoppingBasket basket3 = ShoppingBasketService.prepareShoppingBasket3();
-	//private static boolean isExemptFromSalesTax = true;
-	//private static boolean isImported = true;
 	private static EndPriceOfItemCalculator itemEndpricer = new EndPriceOfItemCalculator();
 	
 	
@@ -59,9 +57,7 @@ public class ShoppingBasketForPrintingPreparer {
 		for(Item item : basket.getBasketContent()) {
 			endPriceOfOneItem = itemEndpricer.calculateEndPriceOfItem(item);
 			itemEndPrices.add(endPriceOfOneItem);
-		}
-		
-	
+		}	
 		return itemEndPrices;
 	}
 
