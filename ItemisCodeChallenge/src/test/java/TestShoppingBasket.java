@@ -162,6 +162,7 @@ public class TestShoppingBasket {
 	
 	/*
 	@After
+	@Order(11)
 	public void tearDown() {
 		basket0 = null;
 		basket1 = null;
